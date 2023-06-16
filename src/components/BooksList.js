@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Booksitem from './Booksitem';
+import BooksItem from './BooksItem';
 
 export default function BookList() {
   const [books] = useState([
@@ -20,7 +20,7 @@ export default function BookList() {
   return (
     <>
       {books.map((book) => (
-        <Booksitem key={book.id} list={book} />
+        <BooksItem key={book.id} list={book} />
       ))}
     </>
   );
