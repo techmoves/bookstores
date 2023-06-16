@@ -1,4 +1,6 @@
+/** Disable linters */
 import React, { useState } from 'react';
+
 import BooksItem from './BooksItem';
 
 export default function BookList() {
