@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <div>
       <nav>
-        <h1 className="topic">Techmoves Books</h1>
+        <h1 className="topic">Techmoves Books  CRM</h1>
         <ul>
           <li>
             <Link className="link" to="/">

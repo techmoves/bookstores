@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
+import BooksItem from './BooksItem';
 
-import BookList from './BookList';
-
-export default function books() {
+export default function BookList() {
   const [books] = useState([
     {
       id: 1,
@@ -10,7 +9,6 @@ export default function books() {
       author: 'William Shakespear',
       category: 'Non-fiction',
       completed: false,
-
     },
     {
       id: 1,
@@ -18,13 +16,14 @@ export default function books() {
       author: 'Dj sbu',
       category: 'Non-fiction',
       completed: false,
-
     },
   ]);
 
   return (
-    <div>
-      <BookList books={books} />
-    </div>
+    <>
+      {books.map((book) => (
+        <BooksItem key={book.id} list={book} />
+      ))}
+    </>
   );
 }
