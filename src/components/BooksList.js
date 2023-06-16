@@ -1,7 +1,5 @@
-/** Disable linters */
 import React, { useState } from 'react';
-
-import BooksItem from './BooksItem';
+import BooksItem from './BooksItem.js';
 
 export default function BookList() {
   const [books] = useState([
