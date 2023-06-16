@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BooksItem from './booksitem';
+import BooksItem from './BooksItem';
 
 export default function BookList() {
   const [books] = useState([
@@ -7,14 +7,12 @@ export default function BookList() {
       id: 1,
       title: 'Romoe and Juliet',
       author: 'William Shakespear',
-      category: 'Non-fiction',
       completed: false,
     },
     {
       id: 1,
       title: 'Art of hustling',
       author: 'Dj sbu',
-      category: 'Non-fiction',
       completed: false,
     },
   ]);
