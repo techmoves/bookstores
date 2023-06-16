@@ -1,13 +1,12 @@
-import React from 'react'
-import "./App.css";
+import React from 'react';
 
-//add book 
+// add book
 
 export default function Form() {
   return (
     <div className="Form">
-      <span className='add-newbook'> ADD NEW BOOK</span>
-      <form action=''>
+      <span className="add-newbook"> ADD NEW BOOK</span>
+      <form action="">
         <input className="input-title" placeholder="Book title" type="text" />
         <input
           className="input-author"

@@ -1,8 +1,7 @@
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Books from './pages/Books';
-import Categories from "./pages/categories";
-import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Categories from './pages/categories';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
@@ -13,6 +12,7 @@ function App() {
         <Route exact path="/categories" element={<Categories />} />
       </Routes>
     </Router>
+
   );
 }
 
