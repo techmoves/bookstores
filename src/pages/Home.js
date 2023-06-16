@@ -1,11 +1,11 @@
 import React from 'react';
 import Form from '../components/Form';
-import List from '../components/list';
+import Books from '../components/Books';
 
-export default function Books() {
+export default function Home() {
   return (
     <div>
-      <List />
+      <Books />
       <Form />
     </div>
   );

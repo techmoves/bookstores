@@ -22,5 +22,9 @@ export default function booksitem({ list }) {
       <div className="book-progress" />
       <div className="progress-update" />
     </div>
+ss-update" />
+  </div>
+ss-update" />
+  </div>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Form from './Form';
+import BookList from './BookList';
 
-export default function List() {
+export default function books() {
   const [books] = useState([
     {
       id: 1,
@@ -24,13 +24,7 @@ export default function List() {
 
   return (
     <div>
-      {books.map((book) => (
-        <Form
-          key={book.id}
-          list={book}
-        />
-      ))}
-
+      <BookList books={books} />
     </div>
   );
 }
