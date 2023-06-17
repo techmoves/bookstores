@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BooksItem from './BooksItem.js';
+import BooksItem from './BooksItem';
 
 export default function BookList() {
   const [books] = useState([
