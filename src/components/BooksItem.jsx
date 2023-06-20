@@ -1,7 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
 export default function BooksItem({ list }) {
+  const dispatch = useDispatch();
+
+  const handleRemove = async (id) => {
+    await dispatch(removeBook(id));
+    await dispatch(getBooks());
+  };
   return (
     <div>
       <div className="book-oder">
@@ -13,7 +20,7 @@ export default function BooksItem({ list }) {
         <div className="add-features">
           <button type="button">Comment</button>
           <div className="vert-line" />
-          <button type="button">Remove</button>
+          <button type="button" onClick={() => handleRemove(list.item_id)}>Remove</button>
           <div className="vert-line" />
           <button type="button">Edit</button>
         </div>
