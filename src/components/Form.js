@@ -7,7 +7,7 @@ import { addBook } from '../redux/books/booksSlice';
 export default function Form() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [dispatch, useDispatch] = useState('');
+  const dispatch = useDispatch();
 
   const addSubmit = (e) => {
     e.preventDefault();
@@ -15,14 +15,13 @@ export default function Form() {
     dispatch(addBook({ id, title, author }));
     setTitle('');
     setAuthor('');
-    useDispatch('');
   };
   return (
     <div className="Form">
       <span className="add-newbook"> ADD NEW BOOK</span>
       <form action="" onSubmit={addSubmit}>
-        <input className="input-title" placeholder="Book title" type="text" />
-        <input className="input-author" placeholder="Book author" type="text" />
+        <input className="input-title" placeholder="Book title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input className="input-author" placeholder="Book author" type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
         <button className="submit-btn" type="submit">
           ADD BOOK
         </button>
