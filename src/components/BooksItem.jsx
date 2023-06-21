@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+
+import { removeBook } from '../redux/books.js/booksSlice';
 
 export default function BooksItem({ list }) {
+  const dispatch = useDispatch();
   return (
     <div>
       <div className="book-oder">
@@ -13,7 +17,9 @@ export default function BooksItem({ list }) {
         <div className="add-features">
           <button type="button">Comment</button>
           <div className="vert-line" />
-          <button type="button">Remove</button>
+          <button type="button" onClick={() => dispatch(removeBook(list.id))}>
+            Remove
+          </button>
           <div className="vert-line" />
           <button type="button">Edit</button>
         </div>

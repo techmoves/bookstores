@@ -1,21 +1,8 @@
-import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import BooksItem from './BooksItem';
 
 export default function BookList() {
-  const [books] = useState([
-    {
-      id: 1,
-      title: 'Romoe and Juliet',
-      author: 'William Shakespear',
-      completed: false,
-    },
-    {
-      id: 1,
-      title: 'Art of hustling',
-      author: 'Dj sbu',
-      completed: false,
-    },
-  ]);
+  const books = useSelector((state) => state.book.bookItem);
 
   return (
     <>
