@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice.js';
+
+import { removeBook } from '../redux/books.js/booksSlice';
 
 export default function BooksItem({ list }) {
   const dispatch = useDispatch();
