@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books.js/booksSlice';
+import { addBook, getBooks } from '../redux/books.js/booksSlice';
 
 // add book
 
@@ -9,13 +9,16 @@ export default function Form() {
   const [author, setAuthor] = useState('');
   const dispatch = useDispatch();
 
-  const addSubmit = (e) => {
+  const addSubmit = async (e) => {
     e.preventDefault();
     const id = `item${Math.random()}`;
     dispatch(addBook({ id, title, author }));
+
+    await dispatch(getBooks({ id, title, author }));
     setTitle('');
     setAuthor('');
   };
+
   return (
     <div className="Form">
       <span className="add-newbook"> ADD NEW BOOK</span>
