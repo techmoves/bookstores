@@ -43,6 +43,10 @@ nav {
   font-family: 'RobotoSlab', sans-serif;
 }
 
+.fa-user {
+  color: #0080ff;
+}
+
 .topic {
   width: 15rem;
   height: 2.313rem;

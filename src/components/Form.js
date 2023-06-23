@@ -12,7 +12,7 @@ export default function Form() {
   const addSubmit = async (e) => {
     e.preventDefault();
     const id = `item${Math.random()}`;
-    dispatch(addBook({ id, title, author }));
+    await dispatch(addBook({ id, title, author }));
 
     await dispatch(fetchBooks({ id, title, author }));
     setTitle('');

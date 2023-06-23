@@ -15,6 +15,7 @@ export const fetchBooks = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get(url);
+      console.log(fetchBooks);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
