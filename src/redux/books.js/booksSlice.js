@@ -10,8 +10,8 @@ const initialState = {
   statusMessage: '',
 };
 
-export const getBooks = createAsyncThunk(
-  'book/getBooks',
+export const fetchBooks = createAsyncThunk(
+  'book/fetchBooks',
   async (_, thunkAPI) => {
     try {
       const response = await axios.get(url);
@@ -53,16 +53,16 @@ const booksSlice = createSlice({
   extraReducers: (builder) => {
     // Handle the state for getting/fetching book from API
     builder
-      .addCase(getBooks.pending, (state) => ({
+      .addCase(fetchBooks.pending, (state) => ({
         ...state,
         isLoading: true,
       }))
-      .addCase(getBooks.fulfilled, (state, action) => ({
+      .addCase(fetchBooks.fulfilled, (state, action) => ({
         ...state,
         isLoading: false,
         bookItem: action.payload,
       }))
-      .addCase(getBooks.rejected, (state, action) => ({
+      .addCase(fetchBooks.rejected, (state, action) => ({
         ...state,
         isLoading: false,
         statusMessage: action.payload,
