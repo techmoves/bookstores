@@ -40,7 +40,7 @@ nav {
   gap: 0.5em;
   list-style: none;
   text-decoration: none;
-  font-family: 'robotos', sans-serif;
+  font-family: 'RobotoSlab', sans-serif;
 }
 
 .topic {
@@ -159,10 +159,6 @@ form {
 
 /* bookitem section------  */
 
-.book-oder {
-
-}
-
 .category {
   width: 4.313rem;
   height: 1.125rem;
@@ -182,7 +178,7 @@ form {
   width: 22.813rem;
   height: 1.813rem;
   margin: 0.188rem 9.688rem 0 0;
-  font-family: RobotoSlab;
+  font-family: 'RobotoSlab', sans-serif;
   font-size: 1.375rem;
   font-weight: bold;
   font-stretch: normal;
@@ -196,7 +192,7 @@ form {
   width: 6.688rem;
   height: 1.188rem;
   margin: 0.25rem 0 0;
-  font-family: RobotoSlab;
+  font-family: 'RobotoSlab', sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
@@ -206,13 +202,14 @@ form {
   color: #4386bf;
 }
 
+/*
 .info {
 
 }
 
 .book-progress  {
 
-}
+} */
 
 .progress-update {
   margin-top: 15px;
