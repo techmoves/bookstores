@@ -323,10 +323,12 @@ form {
 
 .add-features {
   margin-right: 10px;
-  font-size: 18px;
-  color: #4386bf;
-  border: none;
   background: none;
+  display: flex;
+  gap: 1.5em;
+  font-size: 18px;
+  color: rgb(121, 216, 200);
+  border: none;
   font-weight: normal;
 }
 
@@ -342,17 +344,6 @@ form {
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: var(--white-two);
-}
-
-.add-features {
-  display: flex;
-  gap: 1.5em;
-  margin-right: 10px;
-  font-size: 18px;
-  color: rgb(121, 216, 200);
-  border: none;
-  background: none;
-  font-weight: normal;
 }
 
 .update-progress-btn {
