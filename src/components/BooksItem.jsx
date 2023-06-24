@@ -13,7 +13,7 @@ export default function BooksItem({ list }) {
     await dispatch(fetchBooks());
   };
   return (
-    <div className="book-flex">
+    <div>
       <div className="book-oder">
         <div className="info">
           <span className="category">{list.category}</span>
@@ -21,13 +21,21 @@ export default function BooksItem({ list }) {
           <span className="author">{list.author}</span>
         </div>
         <div className="add-features">
-          <button type="button">Comment</button>
+          <button className="re-co-it" type="button">
+            Comment
+          </button>
           <div className="vert-line" />
-          <button type="button" onClick={() => clickRemove(list.id)}>
+          <button
+            className="re-co-it"
+            type="button"
+            onClick={() => clickRemove(list.id)}
+          >
             Remove
           </button>
           <div className="vert-line" />
-          <button type="button">Edit</button>
+          <button className="re-co-it" type="button">
+            Edit
+          </button>
           <article className="second">
             <div className="circle">
               {/* <CircularProgressbar value={90} /> */}
@@ -37,10 +45,11 @@ export default function BooksItem({ list }) {
               <p className="completed">Completed</p>
             </div>
           </article>
-          <div className="info">
+          <div className="vert-line20" />
+          <div className="info2">
             <span className="chapter">CURRENT CHAPTER</span>
-            <h3 className="chapter c-size">Chapter 14</h3>
-            <button className="update-progress btn" type="button">
+            <h3 className="chapter-c">Chapter 14</h3>
+            <button className="update1" type="button">
               Update progress
             </button>
           </div>

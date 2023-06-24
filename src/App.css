@@ -162,6 +162,20 @@ form {
 
 /* bookitem section------  */
 
+.re-co-it {
+  width: 3.375rem;
+  height: 2.2rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+
+}
 .category {
   width: 4.313rem;
   height: 1.125rem;
@@ -204,21 +218,88 @@ form {
   letter-spacing: normal;
   color: #4386bf;
 }
-
-/*
-.info {
-
+.info2 {
+  margin-top: -6%;
 }
 
-.book-progress  {
+.chapter {
+  width: 7.875rem;
+  height: 1.125rem;
+  margin: 0.063rem 3.625rem 0 3.688rem;
+  opacity: 0.5;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
 
-} */
+.update1 {
+  margin: 0.75rem 0 0.563rem 0;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  background-color: #2e90f0;
+  color: #c3daf0;
+  border-radius: 3px;
+  border: none;
+}
 
-.progress-update {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #5e5c5c;
+.chapter-c {
+  width: 4.688rem;
+  height: 1.313rem;
+  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.completed {
+  width: 5rem;
+  height: 1.125rem;
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-top: 0%;
+}
+
+.percentage {
+  width: 4.25rem;
+  height: 2.438rem;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-top: -20%;
+}
+
+.circle {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-style: solid;
+  border-width: 5px;
+  border-image-source: linear-gradient(to bottom, var(--medium-blue), #379cf6);
+  border-image-slice: 1;
+  border-radius: 50%;
+  margin-top: -20%;
 }
 
 .vert-line {
@@ -228,13 +309,18 @@ form {
   border: solid 1px #e8e8e8;
 }
 
-/* .vert-line2 {
+.vert-line20 {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 1.125rem 3.688rem 0 4.938rem;
   border: solid 1px #e8e8e8;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  width: 72.5%;
-  margin-left: 3%;
-} */
+  margin-top: -4%;
+}
+
+.second {
+  display: flex;
+  margin-left: 5%;
+}
 
 .add-features button {
   margin-right: 10px;
