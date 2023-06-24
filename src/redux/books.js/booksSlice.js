@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/knByXsRqGCzYvknw4Ujlg/books/';
 const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 const initialState = {
   bookItem: [],
@@ -37,7 +36,11 @@ export const removeBook = createAsyncThunk(
   'book/removeBook',
   async (id, thunkAPI) => {
     try {
-      const response = await axios.delete(`${url}${id}`);
+      const appId = 'zslYwuuyhP8TzLCo4TJj';
+      const response = await axios.delete(
+        `${baseUrl}/apps/${appId}/books/${id}`,
+      );
+      thunkAPI.dispatch(fetchBooks());
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -59,7 +62,14 @@ const booksSlice = createSlice({
         const bookObject = Object.keys(action.payload);
         state.bookItem = [];
         bookObject.forEach((value) => {
-          state.bookItem.push(action.payload[value][0]);
+          const { author, title, category } = action.payload[value][0];
+          state.bookItem.push({
+            item_id: value,
+            author,
+            title,
+            category,
+          });
+          // state.bookItem.push(action.payload[value][0])
         });
         state.isLoading = false;
       })
@@ -79,10 +89,9 @@ const booksSlice = createSlice({
       }));
     // Handle the state for deleting a  book from the API
     builder
-      .addCase(removeBook.fulfilled, (state, action) => ({
-        ...state,
-        statusMessage: action.payload,
-      }))
+      .addCase(removeBook.fulfilled, (state, action) => {
+        state.statusMessage = action.payload;
+      })
       .addCase(removeBook.rejected, (state, action) => ({
         ...state,
         statusMessage: action.payload,

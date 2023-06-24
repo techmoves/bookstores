@@ -2,15 +2,13 @@ import React from 'react';
 // import { CircularProgressbar } from 'react-circular-progressbar';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { fetchBooks, removeBook } from '../redux/books.js/booksSlice';
+import { removeBook } from '../redux/books.js/booksSlice';
 import '../App.css';
 
 export default function BooksItem({ list }) {
   const dispatch = useDispatch();
-
-  const clickRemove = async (id) => {
-    await dispatch(removeBook(id));
-    await dispatch(fetchBooks());
+  const clickRemove = (id) => {
+    dispatch(removeBook(id));
   };
   return (
     <div>
@@ -28,7 +26,7 @@ export default function BooksItem({ list }) {
           <button
             className="re-co-it"
             type="button"
-            onClick={() => clickRemove(list.id)}
+            onClick={() => clickRemove(list.item_id)}
           >
             Remove
           </button>

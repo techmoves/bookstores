@@ -12,18 +12,18 @@ function Navbar() {
         <ul className="nav-link">
           <li className="link-home">
             <Link className="link" to="/">
-              Books
+              BOOKS
             </Link>
           </li>
           <li className="link-category">
             <Link className="link" to="/categories">
-              Categories
+              CATEGORIES
             </Link>
           </li>
         </ul>
-        <div className="prof-icon" />
-        {/* <i className="fa-light fa-user" /> */}
-        {/* <button type="button" className="prof-icon">
+        {/* <div className="prof-icon" /> */}
+        {/* <i className="fa-light fa-user" />
+        <button type="button" className="prof-icon">
           <FontAwesomeIcon icon={faUser} />
         </button> */}
       </nav>
