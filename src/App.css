@@ -94,7 +94,6 @@ nav {
   margin-left: -40%;
 }
 
-
 .link-category a {
   color: #888;
 }
@@ -173,14 +172,13 @@ form {
   margin-bottom: 1rem;
 }
 
-
-  h1 {
-   margin-left: -3%;
+h1 {
+  margin-left: -3%;
   color: #0290ff;
   width: 15%;
   margin-top: 1.4%;
   font-size: 1.875rem;
-  }
+}
 
 /* bookitem section------  */
 
@@ -327,6 +325,13 @@ form {
   width: 0.125rem;
   height: 1.5rem;
   margin: 0.75rem 1.063rem 0 0.938rem;
+  border: solid 1px #e8e8e8;
+}
+
+.vert-line2 {
+  width: 72%;
+  height: 0.125rem;
+  margin: 2.5rem 0.063rem 1.813rem 0;
   border: solid 1px #e8e8e8;
 }
 
