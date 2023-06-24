@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   return (
     <div>
       <nav>
-        <h1 className="topic">BookstoreCMS</h1>
+        <h1>BookstoreCMS</h1>
         <ul className="nav-link">
           <li className="link-home">
             <Link className="link" to="/">
@@ -21,11 +21,9 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        {/* <div className="prof-icon" /> */}
-        {/* <i className="fa-light fa-user" />
-        <button type="button" className="prof-icon">
+        <button type="button" className="login-btn">
           <FontAwesomeIcon icon={faUser} />
-        </button> */}
+        </button>
       </nav>
     </div>
   );
