@@ -1,26 +1,22 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import BooksItem from './BooksItem';
-import { getBooks } from '../redux/books.js/booksSlice';
+import { fetchBooks } from '../redux/books.js/booksSlice'; // Assuming you have a separate fetchBooks async thunk action
 
 export default function BookList() {
-  const { booksItem, isLoading } = useSelector((store) => store.book);
-
+  const { bookItem } = useSelector((store) => store.book);
+  const appId = 'k68fWhjOzM4PUApMv3rM';
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getBooks());
+    dispatch(fetchBooks(appId)); // Dispatch the fetchBooks async thunk action instead of getBooks
   }, [dispatch]);
-
-  const itemComponents = booksItem
-    ? Object.keys(booksItem).flatMap((key) => booksItem[key].map((book) => (
-      <BooksItem key={`${key}-${book.title}`} list={{ id: key, ...book }} />
-    )))
-    : [];
-
+  // console.log(bookItem);
   return (
     <>
-      <div className="Current-load"><h3>{isLoading === true ? 'Loading...' : '' }</h3></div>
-      {itemComponents}
+      {bookItem.map((item) => (
+        <BooksItem key={uuidv4()} list={item} />
+      ))}
     </>
   );
 }

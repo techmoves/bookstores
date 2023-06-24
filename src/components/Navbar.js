@@ -1,24 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   return (
     <div>
       <nav>
-        <h1 className="topic">TechMoves Books  CRM</h1>
-        <ul>
-          <li>
+        <h1>BookstoreCMS</h1>
+        <ul className="nav-link">
+          <li className="link-home">
             <Link className="link" to="/">
-              Books
+              BOOKS
             </Link>
           </li>
-          <li>
+          <li className="link-category">
             <Link className="link" to="/categories">
-              Categories
+              CATEGORIES
             </Link>
           </li>
         </ul>
-        <div className="prof-icon" />
+        <button type="button" className="login-btn">
+          <FontAwesomeIcon icon={faUser} />
+        </button>
       </nav>
     </div>
   );

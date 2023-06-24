@@ -1,14 +1,14 @@
 import React from 'react';
+// import { CircularProgressbar } from 'react-circular-progressbar';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { getBooks, removeBook } from '../redux/books.js/booksSlice';
+import { removeBook } from '../redux/books.js/booksSlice';
+import '../App.css';
 
 export default function BooksItem({ list }) {
   const dispatch = useDispatch();
-
-  const clickRemove = async (id) => {
-    await dispatch(removeBook(id));
-    await dispatch(getBooks());
+  const clickRemove = (id) => {
+    dispatch(removeBook(id));
   };
   return (
     <div>
@@ -19,17 +19,40 @@ export default function BooksItem({ list }) {
           <span className="author">{list.author}</span>
         </div>
         <div className="add-features">
-          <button type="button">Comment</button>
+          <button className="re-co-it" type="button">
+            Comment
+          </button>
           <div className="vert-line" />
-          <button type="button" onClick={() => clickRemove(list.id)}>
+          <button
+            className="re-co-it"
+            type="button"
+            onClick={() => clickRemove(list.item_id)}
+          >
             Remove
           </button>
           <div className="vert-line" />
-          <button type="button">Edit</button>
+          <button className="re-co-it" type="button">
+            Edit
+          </button>
+          <article className="second">
+            <div className="circle">
+              {/* <CircularProgressbar value={100} /> */}
+            </div>
+            <div className="progress-text">
+              <p className="percentage">100%</p>
+              <p className="completed">Completed</p>
+            </div>
+          </article>
+          <div className="vert-line20" />
+          <div className="info2">
+            <span className="chapter">CURRENT CHAPTER</span>
+            <h3 className="chapter-c">Chapter 14</h3>
+            <button className="update1" type="button">
+              Update progress
+            </button>
+          </div>
         </div>
       </div>
-      <div className="book-progress" />
-      <div className="progress-update" />
     </div>
   );
 }
