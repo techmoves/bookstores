@@ -36,7 +36,7 @@ export default function BooksItem({ list }) {
           </button>
           <article className="second">
             <div className="circle">
-              {/* <CircularProgressbar value={90} /> */}
+              {/* <CircularProgressbar value={100} /> */}
             </div>
             <div className="progress-text">
               <p className="percentage">100%</p>
