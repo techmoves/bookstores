@@ -1,4 +1,5 @@
 import React from 'react';
+// import { CircularProgressbar } from 'react-circular-progressbar';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { fetchBooks, removeBook } from '../redux/books.js/booksSlice';
@@ -27,24 +28,23 @@ export default function BooksItem({ list }) {
           </button>
           <div className="vert-line" />
           <button type="button">Edit</button>
+          <article className="second">
+            <div className="circle">
+              {/* <CircularProgressbar value={90} /> */}
+            </div>
+            <div className="progress-text">
+              <p className="percentage">90%</p>
+              <p className="completed">Completed</p>
+            </div>
+          </article>
+          <div className="info">
+            <span className="chapter">CURRENT CHAPTER</span>
+            <h3 className="chapter c-size">Chapter 14</h3>
+            <button className="update-progress btn" type="button">
+              Update progress
+            </button>
+          </div>
         </div>
-        <article className="second">
-          <div className="circle">
-            {/* <CircularProgressbar value={90} /> */}
-          </div>
-          <div className="progress-text">
-            <p className="percentage">90%</p>
-            <p className="completed">Completed</p>
-          </div>
-        </article>
-      </div>
-
-      <div className="info">
-        <span className="chapter">CURRENT CHAPTER</span>
-        <h3 className="chapter c-size">Chapter 14</h3>
-        <button className="update-progress btn" type="button">
-          Update progress
-        </button>
       </div>
     </div>
   );
