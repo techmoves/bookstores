@@ -12,7 +12,7 @@ export default function BooksItem({ list }) {
     await dispatch(fetchBooks());
   };
   return (
-    <div>
+    <div className="book-flex">
       <div className="book-oder">
         <div className="info">
           <span className="category">{list.category}</span>
@@ -28,17 +28,17 @@ export default function BooksItem({ list }) {
           <div className="vert-line" />
           <button type="button">Edit</button>
         </div>
+        <article className="second">
+          <div className="circle">
+            {/* <CircularProgressbar value={90} /> */}
+          </div>
+          <div className="progress-text">
+            <p className="percentage">90%</p>
+            <p className="completed">Completed</p>
+          </div>
+        </article>
       </div>
-      <div className="book-progress" />
-      <div
-        className="pro"
-        style={{
-          '--clr': 'rgb(59, 59, 245)',
-          '--num': 65,
-        }}
-      />
-      <div className="progress-update" />
-      <div className="vert-line55" />
+
       <div className="info">
         <span className="chapter">CURRENT CHAPTER</span>
         <h3 className="chapter c-size">Chapter 14</h3>

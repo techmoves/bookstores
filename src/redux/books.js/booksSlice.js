@@ -10,8 +10,9 @@ const initialState = {
 };
 export const fetchBooks = createAsyncThunk(
   'book/fetchBooks',
-  async (appId, thunkAPI) => {
+  async (thunkAPI) => {
     try {
+      const appId = 'zslYwuuyhP8TzLCo4TJj';
       const response = await axios.get(`${baseUrl}/apps/${appId}/books/`);
       return response.data;
     } catch (error) {
@@ -23,7 +24,9 @@ export const addBook = createAsyncThunk(
   'book/addBook',
   async (data, thunkAPI) => {
     try {
-      const response = await axios.post(url, data);
+      const appId = 'zslYwuuyhP8TzLCo4TJj';
+      const response = await axios.post(`${baseUrl}/apps/${appId}/books`, data);
+      thunkAPI.dispatch(fetchBooks());
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -67,10 +70,9 @@ const booksSlice = createSlice({
       }));
     // Handle the state for adding new book to the API
     builder
-      .addCase(addBook.fulfilled, (state, action) => ({
-        ...state,
-        statusMessage: action.payload,
-      }))
+      .addCase(addBook.fulfilled, (state, action) => {
+        state.bookItem.push(action.payload);
+      })
       .addCase(addBook.rejected, (state, action) => ({
         ...state,
         statusMessage: action.payload,
